@@ -8,8 +8,8 @@ RUN usermod -G 1001 1001
 RUN npm install
 ADD . /opt/app-root/src
 ADD oc /usr/local/bin/
+USER 0
 RUN touch .kube && chmod -R 777 .kube
-USER 1001
 ENV KUBECONFIG=/opt/app-root/src/.kube
 EXPOSE 8080
 CMD ["npm","start"]
