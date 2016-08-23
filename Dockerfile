@@ -3,7 +3,7 @@ COPY package.json  /opt/app-root/src/
 WORKDIR /opt/app-root/src
 RUN chmod -R 755 /opt/app-root/src
 RUN groupadd -r 1001
-RUN useradd -r -g 1001 1001
+RUN useradd -g 1001 1001
 RUN usermod -g 1001 1001
 RUN chown -R 1001:1001 /opt/app-root/src
 RUN npm install
